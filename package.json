@@ -27,7 +27,7 @@
     "YAML-tmLanguage",
     "TextMate"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/main",
   "activationEvents": [
     "onLanguage:xml",
     "onLanguage:yaml",
@@ -128,9 +128,13 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "tsc -p ./",
+    "vscode:prepublish": "npm run -S esbuild-base -- --minify",
+    "esbuild-base": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "esbuild": "npm run -S esbuild-base -- --sourcemap",
+    "esbuild-watch": "npm run -S esbuild-base -- --sourcemap --watch",
+    "test-compile": "tsc -p ./",
     "compile": "tsc -watch -p ./",
-    "pretest": "tsc -p ./",
+    "pretest": "npm run esbuild && npm run test-compile",
     "test": "ts-standard && node ./out/test/runTest.js"
   },
   "dependencies": {
@@ -144,6 +148,7 @@
     "@types/node": "^14.14.44",
     "@types/plist": "^3.0.2",
     "@types/vscode": "^1.55.0",
+    "esbuild": "^0.11.23",
     "glob": "^7.1.6",
     "mocha": "^8.3.2",
     "ts-standard": "^10.0.0",
