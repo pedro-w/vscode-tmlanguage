@@ -3,6 +3,14 @@
 This package provides syntax highlighting for the SublimeText JSON/YAML tmlanguage files in VsCode. The syntax highlighting uses 
 tmLanguage files sourced from https://github.com/SublimeText/PackageDev. Coffee script language information is sourced from https://github.com/aponxi/sublime-better-coffeescript/blob/master/CoffeeScript.tmLanguage
 
+### Note about this fork (pedro-w)
+
+The original fork (Togusa9) has not seen any activity since 2018 and unfortunately has a bug which causes it to highlight spurious errors in JSON files which are nothing to do with tmlanguage. I have been unable to get a response from the author via github.com.
+This fork contains a fix for that bug and some maintenance work covering the changes in vscode from 2018 to now. I hope to provide a standalong VSIX for download and, if there is interest, I can look into making it available on the extension marketplace.
+The best outcome would be that the original fork becomes active once again and, if that happens, I would be delighted to see these changes merged back if required.
+
+### Functionality
+
 This package can now convert between JSON/YAML and standard PLIST tmLanguage files.
  
 The functionality in this extension is inspired by SublimeText PackageDev, and the lack functionality around tmLanguage files, even though
