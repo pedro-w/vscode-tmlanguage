@@ -5,9 +5,8 @@ tmLanguage files sourced from https://github.com/SublimeText/PackageDev. Coffee 
 
 ### Note about this fork (pedro-w)
 
-The original fork (Togusa9) has not seen any activity since 2018 and unfortunately has a bug which causes it to highlight spurious errors in JSON files which are nothing to do with tmlanguage. I have been unable to get a response from the author via github.com.
-This fork contains a fix for that bug and some maintenance work covering the changes in vscode from 2018 to now. It also contains some bug fixes from user disco0. I hope to provide a standalong VSIX for download and, if there is interest, I can look into making it available on the extension marketplace.
-The best outcome would be that the original fork becomes active once again and, if that happens, I would be delighted to see these changes merged back if required.
+The original fork (Togusa9) has not seen any activity since 2018 and unfortunately has a bug which causes it to highlight spurious errors in JSON files which are nothing to do with tmlanguage. It has now been archived by the author.
+This fork contains a fix for that bug and some maintenance work covering the changes in vscode from 2018 to now. It also contains some bug fixes from user disco0. It is available as a VSIX from github and also from the VSCode marketplace as `pedro-w.tmlanguage`.
 
 ### Functionality
 
@@ -35,4 +34,4 @@ Included commands are:
 # Settings
 tmLanguage.replaceExistingFile - Whether the conversion replaces the existing file or creates a new one. Defaults to true
 
-Please raise any issues with this extension through [GitHub](https://github.com/Togusa09/vscode-tmlanguage/issues)
+Please raise any issues with this extension through [GitHub](https://github.com/pedro-w/vscode-tmlanguage/issues)
