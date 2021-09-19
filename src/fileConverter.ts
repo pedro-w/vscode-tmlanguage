@@ -45,6 +45,17 @@ export class FileConverter {
     }
   }
 
+  private SpecialParsePath (pp: string): path.ParsedPath {
+    const mp = path.parse(pp)
+    const { base } = mp
+    const fex = ['.tmlanguage.json', '.tmlanguage.yaml', '.tmlanguage'].find(e => base.endsWith(e))
+    if (fex == null) {
+      return mp
+    } else {
+      return { ...mp, name: base.substring(0, base.length - fex.length), ext: base.substring(base.length - fex.length) }
+    }
+  }
+
   private ConvertFile (destinationLanguage: string): Thenable<boolean> {
     const editor = vscode.window.activeTextEditor
 
