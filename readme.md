@@ -6,7 +6,7 @@ tmLanguage files sourced from https://github.com/SublimeText/PackageDev. Coffee 
 ### Note about this fork (pedro-w)
 
 The original fork (Togusa9) has not seen any activity since 2018 and unfortunately has a bug which causes it to highlight spurious errors in JSON files which are nothing to do with tmlanguage. It has now been archived by the author.
-This fork contains a fix for that bug and some maintenance work covering the changes in vscode from 2018 to now. It also contains some bug fixes from user disco0. It is available as a VSIX from github and also from the VSCode marketplace as `pedro-w.tmlanguage`.
+This fork contains a fix for that bug and some maintenance work covering the changes in vscode from 2018 to now. It also contains some bug fixes from user disco0. It is available as a VSIX from github and also from the VSCode marketplace [here](https://marketplace.visualstudio.com/items?itemName=pedro-w.tmlanguage).
 
 ### Functionality
 
