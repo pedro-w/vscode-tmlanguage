@@ -6,6 +6,7 @@ import * as plist from 'plist'
 import * as YAML from 'yaml'
 
 import { SupportedLanguage } from './languages'
+import { PathParse } from './util'
 
 export interface IConfig {
   replaceExistingFile: boolean
@@ -35,9 +36,9 @@ export class FileConverter {
   private fileExtensionFor (destinationLanguage: string): string | undefined {
     switch (destinationLanguage.toLowerCase()) {
       case 'json-tmlanguage':
-        return 'JSON-tmLanguage'
+        return 'tmLanguage.json'
       case 'yaml-tmlanguage':
-        return 'YAML-tmLanguage'
+        return 'tmLanguage.yml'
       case 'tmlanguage':
         return 'tmLanguage'
       default:
@@ -60,7 +61,7 @@ export class FileConverter {
 
     try {
       const doc: vscode.TextDocument = editor.document
-      const parsedFilePath: path.ParsedPath = path.parse(doc.fileName)
+      const parsedFilePath: path.ParsedPath = PathParse(doc.fileName)
 
       let documentText = doc.getText()
 
