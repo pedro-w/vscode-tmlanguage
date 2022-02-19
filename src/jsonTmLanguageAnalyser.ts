@@ -1,6 +1,5 @@
 import * as vscode from 'vscode'
-import { JisonTest } from './JisonTest'
-import { Parser } from 'jisons'
+import { parse } from './jsonGrammar'
 
 export default class jsonTmLanguageAnalyser {
   private _docContent: any
@@ -8,10 +7,7 @@ export default class jsonTmLanguageAnalyser {
   public getAnalysis (document: vscode.TextDocument): void {
     const docToCheck = document.getText()
 
-    var t = new JisonTest()
-    var grammar = t.grammar
-    var parser = new Parser(grammar)
-    this._docContent = parser.parse(docToCheck)
+    this._docContent = parse(docToCheck)
 
     // Would having a type on the document content be useful?
     // return docContent;

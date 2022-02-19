@@ -36,7 +36,7 @@ export function activate (context: vscode.ExtensionContext): void {
 
     const diagnosticProvider = new JsonTmLanguageDiagnosticProvider()
     vscode.workspace.onDidChangeTextDocument(event => {
-      diagnosticProvider.CreateDiagnostics(event.document)
+      if (event.document.languageId === 'json-tmlanguage') { diagnosticProvider.CreateDiagnostics(event.document) }
     })
     console.log(`Extension ${context.extension.id} loaded`)
   } catch (err) {
