@@ -141,7 +141,7 @@
   },
   "dependencies": {
     "jsonc-parser": "^3.0.0",
-    "plist": "^3.0.1",
+    "plist": "^3.0.5",
     "yaml": "^1.10.0"
   },
   "devDependencies": {
