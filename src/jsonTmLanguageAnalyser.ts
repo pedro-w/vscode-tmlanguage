@@ -43,7 +43,7 @@ export default class jsonTmLanguageAnalyser {
     return ans
   }
 
-  private searchElements (element: Node, matchingTitle: string, onlyType: string|undefined, ans: Node[]): void {
+  private searchElements (element: Node, matchingTitle: string, onlyType: string | undefined, ans: Node[]): void {
     if (element.type === 'object' || element.type === 'array') {
       if (element.children != null) {
         for (const child of element.children) {
