@@ -81,7 +81,7 @@
 		<key>captures</key>
 		<dict>
 			<key>begin</key>
-			<string>"((?:begin|end)?[cC]aptures)"\s*?:\s*?\{</string>
+			<string>"(captures|beginCaptures|endCaptures|whileCaptures)"\s*:\s*\{</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -213,7 +213,7 @@
 		<key>match</key>
 		<dict>
 			<key>begin</key>
-			<string>"(match|begin|end)"\s*?:\s*(")</string>
+			<string>"(match|begin|end|while)"\s*:\s*(")</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
