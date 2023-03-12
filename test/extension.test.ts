@@ -48,4 +48,7 @@ suite('File conversion tests', function () {
     await commands.executeCommand('workbench.action.closeActiveEditor')
     assert.notStrictEqual(text, '')
   })
+  test('Doomed to failure', async function () {
+    assert.equal(2 + 2, 5)
+  })
 })

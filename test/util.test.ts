@@ -2,7 +2,10 @@ import * as assert from 'assert'
 import { platform } from 'os'
 import { PathParse } from '../src/util'
 
-suite('Utility tests', () => {
+suite('Utility tests', function () {
+  test('Doomed to fail', function () {
+    assert.strictEqual(2 + 2, 5)
+  })
   test('Test path parser', function () {
     const crossPlatformExamples = {
       'readme.txt': { name: 'readme', ext: '.txt', dir: '', base: 'readme.txt', root: '' },

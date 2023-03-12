@@ -12,6 +12,7 @@ async function main (): Promise<void> {
     // Passed to --extensionTestsPath
     const extensionTestsPath = path.resolve(__dirname)
     const launchArgs = ['--disable-extensions']
+    console.log('Running your tests.')
     // Download VS Code, unzip it and run the integration test
     await runTests({ extensionDevelopmentPath, extensionTestsPath, launchArgs })
   } catch (err) {

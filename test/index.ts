@@ -1,37 +1,31 @@
 import * as path from 'path'
-import * as Mocha from 'mocha'
-import * as glob from 'glob'
+import Mocha from 'mocha'
+import { globSync } from 'glob'
 
-export async function run (): Promise<void> {
+export function run (eTestsRoot: string, callback: (error: any, failures?: number) => void): void {
   // Create the mocha test
+  process.env.DEBUG = '*'
   const mocha = new Mocha({
     ui: 'tdd',
     color: true
   })
-
   const testsRoot = path.resolve(__dirname, '..')
-
-  return await new Promise((resolve, reject) => {
-    glob('**/**.test.js', { cwd: testsRoot }, (err: any, files: any[]) => {
-      if (err != null) {
-        return reject(err)
-      }
-
-      // Add files to the test suite
-      files.forEach(f => mocha.addFile(path.resolve(testsRoot, f)))
-
-      try {
-        // Run the mocha test
-        mocha.run(failures => {
-          if (failures > 0) {
-            reject(new Error(`${failures} tests failed.`))
-          } else {
-            resolve()
-          }
-        })
-      } catch (err) {
-        reject(err)
-      }
+  const files = globSync('**/**.test.js', { cwd: testsRoot })
+  const roots = files.map(f => path.resolve(testsRoot, f))
+  // Add files to the test suite
+  console.log('tests root', eTestsRoot)
+  console.log('Running the suite, files ', JSON.stringify(roots))
+  files.forEach(f => mocha.addFile(path.resolve(testsRoot, f)))
+  // Run the mocha test
+  try {
+    const runner = mocha.run((failures: number) => {
+      console.log('Got failures ', failures)
+      callback(null, failures)
     })
-  })
+    console.log(JSON.stringify(runner.stats ?? 'nope'))
+  } catch (err) {
+    console.error(err)
+    callback(err)
+  }
+  console.log(JSON.stringify(mocha.files))
 }
