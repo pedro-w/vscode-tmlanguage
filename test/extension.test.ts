@@ -19,6 +19,7 @@ const yamlTestFile = path.join(formatFilesPath, 'yamltest.YAML-tmLanguage')
 
 // Defines a Mocha test suite to group tests of similar kind together
 suite('File conversion tests', function () {
+  this.timeout(0)
   setup(async function () {
     // Just make sure the extension is loaded before we do anything
     const extension = extensions.getExtension('pedro-w.tmlanguage')
@@ -48,7 +49,7 @@ suite('File conversion tests', function () {
     await commands.executeCommand('workbench.action.closeActiveEditor')
     assert.notStrictEqual(text, '')
   })
-  test('Doomed to failure', async function () {
-    assert.equal(2 + 2, 5)
-  })
+  // test('Doomed to failure', async function () {
+  //   assert.equal(2 + 2, 5)
+  // })
 })
