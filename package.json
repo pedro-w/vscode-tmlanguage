@@ -142,7 +142,7 @@
   "dependencies": {
     "jsonc-parser": "^3.0.0",
     "plist": "^3.0.5",
-    "yaml": "^2.1.1"
+    "yaml": "^2.2.2"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.0",
