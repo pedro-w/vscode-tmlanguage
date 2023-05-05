@@ -29,10 +29,11 @@ export function activate (context: vscode.ExtensionContext): void {
     const convertToAutoCommand = vscode.commands.registerCommand('extension.convertTo', async () => {
       await fileConverter.convertFileToAuto()
     })
+    const sectionCompletion = vscode.languages.registerCompletionItemProvider('json-tmlanguage', new JsonTmLanguageCompletionItemProvider(), '#')
+
     context.subscriptions.push(convertToAutoCommand)
     context.subscriptions.push(fileConverter)
-
-    context.subscriptions.push(vscode.languages.registerCompletionItemProvider(JSON_FILE, new JsonTmLanguageCompletionItemProvider(), '#'))
+    context.subscriptions.push(sectionCompletion)
 
     const diagnosticProvider = new JsonTmLanguageDiagnosticProvider()
     vscode.workspace.onDidChangeTextDocument(event => {
@@ -41,7 +42,7 @@ export function activate (context: vscode.ExtensionContext): void {
     vscode.workspace.onDidCloseTextDocument(document => {
       diagnosticProvider.RemoveDiagnostics(document)
     })
-    console.log(`Extension ${context.extension.id} loaded`)
+    console.log(`*** Extension ${context.extension.id} loaded`)
   } catch (err) {
     console.error('Failed to load tmLanguage extension due to ', err)
   }
