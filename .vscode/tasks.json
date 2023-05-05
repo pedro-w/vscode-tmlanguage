@@ -35,6 +35,17 @@
 			"group": "build"
 		},
 		{
+			"label": "npm: prelaunch",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"esbuild"
+			],
+			"isBackground": true,
+			"problemMatcher": "$tsc-watch"
+		},
+		{
 			"type": "npm",
 			"script": "test",
 			"group": "test",
