@@ -29,9 +29,6 @@
   ],
   "main": "./dist/main",
   "activationEvents": [
-    "onLanguage:xml",
-    "onLanguage:yaml",
-    "onLanguage:json",
     "onLanguage:json-tmlanguage",
     "onLanguage:yaml-tmlanguage",
     "onLanguage:tmlanguage"
