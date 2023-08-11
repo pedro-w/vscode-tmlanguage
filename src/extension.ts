@@ -42,7 +42,7 @@ export function activate (context: vscode.ExtensionContext): void {
     vscode.workspace.onDidCloseTextDocument(document => {
       diagnosticProvider.RemoveDiagnostics(document)
     })
-    console.log(`*** Extension ${context.extension.id} loaded`)
+    // console.log(`*** Extension ${context.extension.id} loaded`)
   } catch (err) {
     console.error('Failed to load tmLanguage extension due to ', err)
   }
