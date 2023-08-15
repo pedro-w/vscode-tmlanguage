@@ -29,13 +29,17 @@ export function activate (context: vscode.ExtensionContext): void {
     const convertToAutoCommand = vscode.commands.registerCommand('extension.convertTo', async () => {
       await fileConverter.convertFileToAuto()
     })
-    const sectionCompletion = vscode.languages.registerCompletionItemProvider('json-tmlanguage', new JsonTmLanguageCompletionItemProvider(), '#')
+    const sectionCompletion = vscode.languages.registerCompletionItemProvider({ language: 'json-tmlanguage' }, new JsonTmLanguageCompletionItemProvider(), '#')
 
     context.subscriptions.push(convertToAutoCommand)
     context.subscriptions.push(fileConverter)
     context.subscriptions.push(sectionCompletion)
 
     const diagnosticProvider = new JsonTmLanguageDiagnosticProvider()
+    vscode.workspace.textDocuments.forEach(document => { diagnosticProvider.CreateDiagnostics(document) })
+    vscode.workspace.onDidOpenTextDocument(document => {
+      diagnosticProvider.CreateDiagnostics(document)
+    })
     vscode.workspace.onDidChangeTextDocument(event => {
       diagnosticProvider.CreateDiagnostics(event.document)
     })

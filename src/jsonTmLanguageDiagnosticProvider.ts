@@ -4,6 +4,8 @@ import JsonTmLanguageAnalyser from './jsonTmLanguageAnalyser'
 export default class jsonTmLanguageDiagnosticProvider {
   private readonly tmLanguageErrors = vscode.languages.createDiagnosticCollection('tmLanguageErrors')
   public CreateDiagnostics (document: vscode.TextDocument): void {
+    // Only attach diagnostics to json-tmlanguage docs
+    if (document.languageId !== 'json-tmlanguage') { return }
     const diagnostics: vscode.Diagnostic[] = []
 
     const analyser = new JsonTmLanguageAnalyser(document)
