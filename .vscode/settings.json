@@ -10,5 +10,6 @@
 	"typescript.tsdk": "./node_modules/typescript/lib",
 	"standard.enable": true,
 	"standard.engine": "ts-standard",
-	"javascript.validate.enable": true //yes
+	"javascript.validate.enable": true,
+	"mesonbuild.configureOnOpen": false //yes
 }

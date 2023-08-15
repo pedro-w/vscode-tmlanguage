@@ -23,13 +23,9 @@
 	"problemMatcher": "$tsc-watch",
 	"tasks": [
 		{
-			"label": "npm",
-			"type": "shell",
-			"command": "npm",
-			"args": [
-				"run",
-				"compile"
-			],
+			"label": "npm: watch",
+			"type": "npm",
+			"script": "watch",
 			"isBackground": true,
 			"problemMatcher": "$tsc-watch",
 			"group": "build"
@@ -63,10 +59,10 @@
 		},
 		{
 			"type": "npm",
-			"script": "esbuild",
+			"script": "esbuild-compile",
 			"group": "build",
 			"problemMatcher": [],
-			"label": "npm: esbuild",
+			"label": "npm: esbuild-compile",
 			"detail": "npm run esbuild-base -- --sourcemap"
 		},
 		{
@@ -78,7 +74,7 @@
 			},
 			"problemMatcher": [],
 			"label": "npm: compile",
-			"detail": "tsc -watch -p ./"
+			"detail": "compile with tsc"
 		}
 	]
 }
