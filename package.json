@@ -28,7 +28,9 @@
     "TextMate"
   ],
   "main": "./dist/main",
-  "extensionDependencies": ["vscode.json-language-features"],
+  "extensionDependencies": [
+    "vscode.json-language-features"
+  ],
   "activationEvents": [
     "onLanguage:tmlanguage"
   ],
@@ -62,7 +64,11 @@
         "title": "Convert to... (auto)"
       }
     ],
-    "jsonLanguagePartcipants": [{"languageId":"json-tmlanguage"}],
+    "jsonLanguagePartcipants": [
+      {
+        "languageId": "json-tmlanguage"
+      }
+    ],
     "languages": [
       {
         "id": "json-tmlanguage",
@@ -148,7 +154,7 @@
     "@types/plist": "^3.0.2",
     "@types/vscode": "^1.55.0",
     "@vscode/test-electron": "^2.4",
-    "esbuild": "^0.19.2",
+    "esbuild": "^0.21.5",
     "glob": "^10.2.2",
     "mocha": "^10.0.0",
     "ts-standard": "^12.0.2",
