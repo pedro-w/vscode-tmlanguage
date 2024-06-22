@@ -6,7 +6,7 @@
   "publisher": "pedro-w",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.55.0"
+    "vscode": "^1.87.0"
   },
   "repository": {
     "type": "git",
@@ -28,9 +28,8 @@
     "TextMate"
   ],
   "main": "./dist/main",
+  "extensionDependencies": ["vscode.json-language-features"],
   "activationEvents": [
-    "onLanguage:json-tmlanguage",
-    "onLanguage:yaml-tmlanguage",
     "onLanguage:tmlanguage"
   ],
   "contributes": {
@@ -63,6 +62,7 @@
         "title": "Convert to... (auto)"
       }
     ],
+    "jsonLanguagePartcipants": [{"languageId":"json-tmlanguage"}],
     "languages": [
       {
         "id": "json-tmlanguage",
