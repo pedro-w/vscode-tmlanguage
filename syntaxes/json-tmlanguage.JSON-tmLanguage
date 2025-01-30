@@ -178,6 +178,7 @@
         "end": "\\}",
         "patterns": [
           { "include": "#name" },
+          { "include": "#patterns" },
           { "include": "#comments" }
         ],
         "contentName": "meta.capture.json-tmlanguage"
