@@ -1,6 +1,7 @@
 version: 1.0.{build}
 environment:
   nodejs_version: "LTS"
+  NODE_SKIP_PLATFORM_CHECK: 1
 platform: x64
 install:
 - ps: Install-Product node $env:nodejs_version
