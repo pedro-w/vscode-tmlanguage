@@ -145,7 +145,7 @@
   },
   "dependencies": {
     "jsonc-parser": "^3.0.0",
-    "plist": "^3.0.5",
+    "plist": "^3.1.1",
     "yaml": "^2.8.3"
   },
   "devDependencies": {
@@ -153,11 +153,14 @@
     "@types/node": "^24.12.0",
     "@types/plist": "^3.0.2",
     "@types/vscode": "^1.55.0",
-    "@vscode/test-electron": "2.5",
+    "@vscode/test-electron": "^3.1.0",
     "esbuild": "^0.28.1",
     "glob": "^13.0.6",
     "mocha": "^11.7.5",
     "ts-standard": "^12.0.2",
     "typescript": "^6.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
   }
 }
